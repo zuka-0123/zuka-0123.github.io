@@ -1,9 +1,8 @@
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 
 def field(body: str, label: str) -> str:
@@ -27,7 +26,7 @@ article = field(form, "本文")
 if not title or not article:
     raise SystemExit("記事タイトルまたは本文が見つかりません。")
 
-created = datetime.fromisoformat(issue["created_at"].replace("Z", "+00:00")).astimezone(ZoneInfo("Asia/Tokyo"))
+created = datetime.fromisoformat(issue["created_at"].replace("Z", "+00:00")).astimezone(timezone(timedelta(hours=9)))
 date_text = created.strftime("%Y-%m-%d %H:%M:%S %z")
 filename = f"{created:%Y-%m-%d}-post-{issue['number']}.md"
 
@@ -54,4 +53,3 @@ output_path = Path(os.environ["GITHUB_OUTPUT"])
 with output_path.open("a", encoding="utf-8") as output:
     output.write(f"title={title.replace(chr(10), ' ')}\n")
     output.write(f"file={post_path.as_posix()}\n")
-
