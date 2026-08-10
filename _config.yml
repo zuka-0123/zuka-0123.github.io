@@ -1,0 +1,35 @@
+title: 余白のノート
+description: 数学と日々の気づきを、静かに書き留めるブログ。
+author: zuka-0123
+url: "https://zuka-0123.github.io"
+baseurl: ""
+lang: ja
+timezone: Asia/Tokyo
+
+permalink: /diary/:year/:month/:day/:title/
+excerpt_separator: "<!--more-->"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

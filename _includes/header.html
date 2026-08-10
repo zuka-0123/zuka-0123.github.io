@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} ホーム">
+      <span class="brand-mark" aria-hidden="true">∴</span>
+      <span>{{ site.title }}</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">メニューを開く</span>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>ホーム</a>
+      <a href="{{ '/archive/' | relative_url }}"{% if page.url contains '/archive' %} aria-current="page"{% endif %}>アーカイブ</a>
+      <a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags' %} aria-current="page"{% endif %}>タグ</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>このサイトについて</a>
+    </nav>
+  </div>
+</header>
+

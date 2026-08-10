@@ -1,0 +1,45 @@
+name: 新しい記事を書く
+description: フォームに本文を書いて送信すると、ブログ記事として自動公開されます。
+title: "[記事] "
+labels:
+  - blog-post
+body:
+  - type: markdown
+    attributes:
+      value: |
+        下の欄に記事を書いてください。送信すると数分でブログに公開されます。
+
+  - type: input
+    id: article_title
+    attributes:
+      label: 記事タイトル
+      placeholder: 例：今日考えたこと
+    validations:
+      required: true
+
+  - type: input
+    id: mood
+    attributes:
+      label: 今日の気分
+      placeholder: 例：おだやか
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: タグ
+      description: 複数ある場合は読点またはカンマで区切ってください。
+      placeholder: 例：数学、日記
+    validations:
+      required: false
+
+  - type: textarea
+    id: article_body
+    attributes:
+      label: 本文
+      description: 普通の文章で書けます。見出しには「## 見出し」を使えます。
+      placeholder: ここに記事を書きます。
+    validations:
+      required: true
+

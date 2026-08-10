@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ja' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17233d" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+    {% seo %}
+    {% feed_meta %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">本文へ移動</a>
+    {% include header.html %}
+    <main id="main" class="shell main-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
+

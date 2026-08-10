@@ -1,0 +1,31 @@
+---
+layout: default
+title: タグ
+permalink: /tags/
+---
+<header class="listing-header">
+  <p class="eyebrow">TOPICS</p>
+  <h1>タグ</h1>
+  <p>興味のあるテーマから記事を探せます。</p>
+</header>
+
+<nav class="tag-cloud" aria-label="タグ一覧">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    <a href="#{{ tag[0] | slugify }}"><span>#{{ tag[0] }}</span><small>{{ tag[1].size }}</small></a>
+  {% endfor %}
+  {% if site.tags.size == 0 %}<p>記事を公開すると、ここにタグが表示されます。</p>{% endif %}
+</nav>
+
+<div class="tag-sections">
+  {% for tag in sorted_tags %}
+    <section id="{{ tag[0] | slugify }}" class="tag-section">
+      <h2>#{{ tag[0] }} <small>{{ tag[1].size }}件</small></h2>
+      <ul>
+        {% for post in tag[1] %}
+          <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>
