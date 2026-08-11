@@ -1,0 +1,68 @@
+---
+layout: default
+title: 記事を書く
+permalink: /write/
+extra_css: /assets/css/write.css
+extra_js: /assets/js/write.js
+---
+<section class="writer-shell">
+  <header class="writer-header">
+    <p class="eyebrow">NEW POST</p>
+    <h1>記事を書く</h1>
+    <p>ここで文章を書いて「公開確認へ」を押してください。最後にGitHubで内容を確認して送信すると、数分でブログに載ります。</p>
+  </header>
+
+  <form id="writer-form" class="writer-form">
+    <div class="field-group">
+      <label for="post-title">タイトル <span>必須</span></label>
+      <input id="post-title" name="title" type="text" required maxlength="120" autocomplete="off" placeholder="今日考えたこと">
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="post-mood">今日の気分</label>
+        <input id="post-mood" name="mood" type="text" maxlength="60" autocomplete="off" placeholder="おだやか">
+      </div>
+      <div class="field-group">
+        <label for="post-tags">タグ</label>
+        <input id="post-tags" name="tags" type="text" maxlength="120" autocomplete="off" placeholder="数学、日記">
+      </div>
+    </div>
+
+    <div class="field-group body-field">
+      <div class="label-line">
+        <label for="post-body">本文 <span>必須</span></label>
+        <output id="char-count">0文字</output>
+      </div>
+      <div class="format-toolbar" aria-label="文章の書式">
+        <button type="button" data-format="heading">見出し</button>
+        <button type="button" data-format="list">箇条書き</button>
+        <button type="button" data-format="bold">太字</button>
+        <button type="button" data-format="quote">引用</button>
+      </div>
+      <textarea id="post-body" name="body" required rows="15" placeholder="ここに本文を書きます。&#10;&#10;段落を分けるときは、間に空白行を入れてください。"></textarea>
+    </div>
+
+    <p id="draft-status" class="draft-status" aria-live="polite">入力内容はこの端末に自動保存されます。</p>
+
+    <div class="writer-actions">
+      <button class="publish-button" type="submit">公開確認へ <span aria-hidden="true">→</span></button>
+      <button id="clear-draft" class="clear-button" type="button">下書きを削除</button>
+    </div>
+  </form>
+
+  <aside class="install-card">
+    <div>
+      <p class="eyebrow">ONE-TAP ACCESS</p>
+      <h2>ホーム画面に追加できます</h2>
+      <p>追加すると、次回からアプリのようにこの投稿画面を直接開けます。</p>
+    </div>
+    <button id="install-app" type="button" hidden>ホーム画面に追加</button>
+    <details>
+      <summary>追加方法を見る</summary>
+      <p><strong>Android：</strong>Chrome右上のメニューから「ホーム画面に追加」または「アプリをインストール」。</p>
+      <p><strong>iPhone：</strong>Safariの共有ボタンから「ホーム画面に追加」。</p>
+    </details>
+  </aside>
+</section>
+
