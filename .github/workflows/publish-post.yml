@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   publish:
-    if: startsWith(github.event.issue.title, '[記事]')
+    # リポジトリ所有者本人の投稿だけをブログへ公開する
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, '[記事]')
     runs-on: ubuntu-latest
     steps:
       - name: ブログを読み込む
