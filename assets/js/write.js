@@ -4,7 +4,6 @@
 
   const fields = {
     title: document.querySelector('#post-title'),
-    mood: document.querySelector('#post-mood'),
     tags: document.querySelector('#post-tags'),
     body: document.querySelector('#post-body'),
   };
@@ -71,7 +70,6 @@
       template: 'new-post.yml',
       title: `[記事] ${fields.title.value.trim()}`,
       article_title: fields.title.value.trim(),
-      mood: fields.mood.value.trim(),
       tags: fields.tags.value.trim(),
       article_body: fields.body.value.trim(),
     });
@@ -108,4 +106,3 @@
     installButton.hidden = true;
   });
 })();
-

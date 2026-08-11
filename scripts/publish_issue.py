@@ -19,7 +19,6 @@ issue = event["issue"]
 form = issue.get("body") or ""
 
 title = field(form, "記事タイトル")
-mood = field(form, "今日の気分")
 tags_text = field(form, "タグ")
 article = field(form, "本文")
 
@@ -36,10 +35,9 @@ front_matter = [
     f"title: {json.dumps(title, ensure_ascii=False)}",
     f"date: {date_text}",
     f"tags: {json.dumps(tags, ensure_ascii=False)}",
+    "---",
+    "",
 ]
-if mood:
-    front_matter.append(f"mood: {json.dumps(mood, ensure_ascii=False)}")
-front_matter.extend(["---", ""])
 
 excerpt_marker = "\n\n<!--more-->\n\n"
 if "<!--more-->" not in article:

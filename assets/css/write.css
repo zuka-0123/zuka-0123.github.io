@@ -3,7 +3,6 @@
 .writer-header h1 { margin: 0; font-size: clamp(2rem, 8vw, 3.2rem); letter-spacing: -.04em; }
 .writer-header > p:last-child { max-width: 620px; margin: 12px 0 0; color: var(--muted); }
 .writer-form { padding: 30px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field-group { margin-bottom: 22px; }
 .field-group > label, .label-line label { display: block; margin-bottom: 7px; font-size: .84rem; font-weight: 800; }
 .field-group label span { color: var(--accent); font-size: .68rem; }
@@ -31,7 +30,6 @@
 
 @media (max-width: 620px) {
   .writer-form { margin-inline: -2px; padding: 23px 18px; border-radius: 18px; }
-  .field-row { grid-template-columns: 1fr; gap: 0; }
   .field-group input { min-height: 54px; font-size: 16px; }
   .field-group textarea { min-height: 46vh; font-size: 16px; }
   .writer-actions { align-items: stretch; flex-direction: column; }
@@ -40,4 +38,3 @@
   .install-card { grid-template-columns: 1fr; }
   #install-app { width: 100%; color: white; }
 }
-

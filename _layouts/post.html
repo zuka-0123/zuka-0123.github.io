@@ -5,7 +5,6 @@ layout: default
   <header class="post-header">
     <p class="eyebrow">DIARY · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></p>
     <h1>{{ page.title }}</h1>
-    {% if page.mood %}<p class="mood"><span aria-hidden="true">◌</span> きょうの気分：{{ page.mood }}</p>{% endif %}
     {% if page.tags.size > 0 %}
       <ul class="tag-list post-tags" aria-label="タグ">
         {% for tag in page.tags %}<li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a></li>{% endfor %}
@@ -24,4 +23,3 @@ layout: default
     {% endif %}
   </nav>
 </article>
-

@@ -18,14 +18,6 @@ body:
       required: true
 
   - type: input
-    id: mood
-    attributes:
-      label: 今日の気分
-      placeholder: 例：おだやか
-    validations:
-      required: false
-
-  - type: input
     id: tags
     attributes:
       label: タグ
@@ -42,4 +34,3 @@ body:
       placeholder: ここに記事を書きます。
     validations:
       required: true
-
