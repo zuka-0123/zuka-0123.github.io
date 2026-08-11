@@ -47,6 +47,7 @@ if "<!--more-->" not in article:
     article = paragraphs[0] + excerpt_marker + (paragraphs[1] if len(paragraphs) > 1 else "")
 
 post_path = Path("_posts") / filename
+post_path.parent.mkdir(parents=True, exist_ok=True)
 post_path.write_text("\n".join(front_matter) + article.strip() + "\n", encoding="utf-8")
 
 output_path = Path(os.environ["GITHUB_OUTPUT"])
